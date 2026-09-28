@@ -1,26 +1,29 @@
 import type { FAQItem, PageContent, RouteKind } from "@/types/content";
-import { entityFamilies } from "@/data/entities";
+import { site } from "@/data/site";
 import { faqItems } from "@/data/faq";
-import { guidePages } from "@/data/pages/guide-pages";
-import { homePage } from "@/data/pages/home";
-import { releasePages } from "@/data/pages/release-pages";
-import { sitePages } from "@/data/pages/site-pages";
+import { fixedPages as fixedPagesList } from "@/data/pages/fixed-pages";
 import { wikiPages } from "@/data/pages/wiki-pages";
-import { buildEntityPages } from "@/lib/entities";
+import { sitePages } from "@/data/pages/site-pages";
+import { homePage } from "@/data/pages/home";
+import { trustPages } from "@/data/pages/trust-pages";
 import { normalizePath } from "@/lib/localization";
 
-const fixedPages: PageContent[] = [
-  homePage,
-  ...wikiPages,
-  ...guidePages,
-  ...releasePages,
-  ...sitePages,
-];
-
-const pages: PageContent[] = [
-  ...fixedPages,
-  ...buildEntityPages(entityFamilies),
-];
+const pages: PageContent[] = (() => {
+  const seen = new Set<string>();
+  const merged: PageContent[] = [];
+  for (const page of [
+    homePage,
+    ...fixedPagesList,
+    ...wikiPages,
+    ...sitePages,
+    ...trustPages,
+  ]) {
+    if (seen.has(page.id)) continue;
+    seen.add(page.id);
+    merged.push(page);
+  }
+  return merged;
+})();
 
 export interface FinalRouteManifestEntry {
   id: string;
@@ -98,13 +101,22 @@ function compareUrls(left: PageContent, right: PageContent): number {
 
 /**
  * Returns a small, deterministic set of content pages for a locale's homepage.
- * Trust pages and tools are intentionally excluded so this is driven only by
- * editorial review dates on actual indexable content pages.
  */
-export function getRecentUpdates(
+export function getHomepageSpotlights(
   locale: string,
+  limit = 6,
+): PageContent[] {
+  return pages
+    .filter(
+      (page) => page.locale === locale && page.routeKind !== "home" && page.url !== "/",
+    )
+    .slice(0, limit);
+}
+
+export function getRecentUpdates(
+  locale: string = site.primaryLocale,
   limit = 5,
-  sourcePages: PageContent[] = getIndexablePages(),
+  sourcePages: PageContent[] = pages,
 ): PageContent[] {
   if (limit <= 0) return [];
 

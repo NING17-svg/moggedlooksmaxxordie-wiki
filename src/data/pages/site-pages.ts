@@ -12,26 +12,26 @@ export const sitePages: PageContent[] = [
     pageType: "faq",
     presentation: { shell: "content", variant: "reading-full" },
     h1: `${site.gameName} FAQ`,
-    seoTitle: `${site.gameName} FAQ | Common Questions`,
+    seoTitle: `${site.gameName} FAQ | Common Launch Questions`,
     metaDescription:
-      "A frequently asked questions page template for site status, release info, platforms, and starter guide scope.",
+      "Common questions about MOGGED Looksmaxx or Die: Early Access release date, Steam AppID 4917440, Windows PC scope, co-op shape, and documentedsystem numbers.",
     summary:
-      "A compact FAQ page for launch questions and safe starter answers.",
+      "Launch-window FAQ for MOGGED Looksmaxx or Die, anchored to Steam AppID 4917440 and the SteamDB dated snapshot.",
     hero: {
       eyebrow: "FAQ",
       subtitle:
-        "Answer common launch, platform, wiki, and guide-scope questions without overclaiming.",
+        "Common launch questions for MOGGED Looksmaxx or Die: release date, platform, co-op shape, and documented scope numbers.",
       ctas: [
-        { label: "Release Info", href: "/release-date" },
-        { label: "Contact", href: "/contact" },
+        { label: "Release Status", href: "/release-status" },
+        { label: "Platforms", href: "/platforms" },
       ],
     },
     quickAnswer:
-      "This FAQ should answer only what the site can support with official facts or clear internal policy.",
+      "MOGGED Looksmaxx or Die is the Sigma Labs Steam Early Access release (AppID 4917440, trademark Frost Interactive LLC), launching October 1, 2026 on Windows PC only, with 1-8 player proximity voice-chat co-op and the documented scope of 126 items, 19 peptide side effects, 5 locations, 15 enemies, and 82 achievements.",
     keyFacts: [
-      { label: "FAQ source", value: "Official facts or site policy" },
-      { label: "Schema", value: "FAQ JSON-LD enabled" },
-      { label: "Review", value: "Update as launch facts change" },
+      { label: "Release date", value: "October 1, 2026 (Early Access)" },
+      { label: "Platform", value: "Windows PC only" },
+      { label: "Publisher", value: "Sigma Labs (Frost Interactive LLC trademark)" },
     ],
     modules: [
       {
@@ -39,20 +39,14 @@ export const sitePages: PageContent[] = [
         type: "prose",
         heading: "FAQ policy",
         body:
-          "Keep answers short, source-aware, and easy to update. Avoid speculative claims about release dates, platforms, gameplay systems, or technical details.",
+          "Every FAQ answer on this page is traceable to the Steam store page (AppID 4917440), the SteamDB dated snapshot, the Steam Community hub for AppID 4917440, or the Sigma Labs publisher search on Steam. Answers are reviewed on the 2026-09-27 research date and updated as the launch window progresses.",
       },
     ],
-    faqIds: [
-      "what-is-this-site",
-      "is-official",
-      "release-date-known",
-      "platforms-known",
-      "guide-depth",
-    ],
-    relatedPageIds: ["wiki", "guides", "release-date", "about"],
+    faqIds: [],
+    relatedPageIds: ["wiki", "guides", "release-status", "about"],
     schemaTypes: ["FAQPage", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: "2026-09-27",
   },
   {
     id: "about",
@@ -98,7 +92,7 @@ export const sitePages: PageContent[] = [
           "Use official websites, store pages, developer updates, publisher posts, and press materials for launch facts. Mark uncertain areas as pending instead of filling gaps with guesses.",
       },
     ],
-    faqIds: ["what-is-this-site", "is-official"],
+    faqIds: [],
     relatedPageIds: ["contact", "privacy-policy", "terms"],
     schemaTypes: ["Article", "BreadcrumbList", "FAQPage"],
     sourceStatus: "internal",
