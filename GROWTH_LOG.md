@@ -6,6 +6,14 @@ Record every growth-relevant edit here. Keep entries short, factual, and useful 
 
 ## Change Log
 
+### 2026-09-29 - System requirements page mirrored to Steam Minimum table
+
+- Task: Replace the previous "hardware not yet announced" framing on /system-requirements with the official Steam store Minimum spec table (Windows 11 64-bit, i5-12400F / Ryzen 5 5600, RTX 3060 Ti 8GB / RX 6700 XT, 16 GB RAM, DirectX 11, 8 GB storage, DirectX-compatible sound card, microphone required, 6 GB cards on lower quality presets, 1080p high-settings target) and add a clearly-labelled "Recommended: not announced by Sigma Labs" section.
+- Files changed: `src/data/pages/fixed-pages.ts` (system-requirements block, guides grid summary), `src/data/pages/home.ts` (home grid summary), `src/data/faq.ts` (mlw-spec-gpu, mlw-spec-deck, mlw-spec-disk, mlw-spec-windows10, new mlw-spec-mic), `CONTENT_INDEX.md`, `GROWTH_LOG.md`.
+- URLs affected: `/system-requirements` rewritten; no URL changes.
+- SEO changed: page H1, seoTitle, metaDescription, summary, quickAnswer, keyFacts, modules, and FAQ coverage all reflect the Steam Minimum table; Recommended specs remain explicitly marked as not announced.
+- Verification: `npm run verify` required.
+
 ### 2026-09-28 - Adsterra six-unit code integration
 
 - Task: Replace the six placeholder Adsterra ad slots (Native Banner, Banner 728x90, Banner 468x60, Banner 320x50, Banner 160x600, Smartlink) with the real codes collected from the Adsterra publisher dashboard.

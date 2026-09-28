@@ -255,7 +255,7 @@ export const faqItems: FAQItem[] = [
     id: "mlw-spec-gpu",
     question: "Will I need a GPU for MOGGED Looksmaxx or Die?",
     answer:
-      "The Steam store has not published a minimum or recommended GPU model as of 2026-09-27. A specific graphics card requirement will be added to the Steam store page when Sigma Labs publishes the system spec table.",
+      "Yes. The Steam store Minimum spec table lists an NVIDIA GeForce RTX 3060 Ti 8GB or AMD Radeon RX 6700 XT as the baseline GPU. Owners of 6 GB graphics cards can still install the game, but the Steam spec page tells them to use the lower quality presets.",
     pageIds: ["system-requirements"],
     category: "platform",
     schemaEligible: true,
@@ -265,7 +265,7 @@ export const faqItems: FAQItem[] = [
     id: "mlw-spec-deck",
     question: "Does MOGGED Looksmaxx or Die run on Steam Deck?",
     answer:
-      "Steam Deck Verified status is not announced as of 2026-09-27. The store has only confirmed Windows 11 64-bit as the supported platform. Revisit the Steam Deck section of the Steam store after launch for an official rating.",
+      "Steam Deck Verified status is not announced by Sigma Labs as of 2026-09-29. The Steam spec table is calibrated for a Windows 11 64-bit desktop with an RTX 3060 Ti 8GB / RX 6700 XT class card, not a handheld. Revisit the Steam Deck section of the Steam store after launch for an official rating.",
     pageIds: ["system-requirements"],
     category: "platform",
     schemaEligible: true,
@@ -275,7 +275,7 @@ export const faqItems: FAQItem[] = [
     id: "mlw-spec-disk",
     question: "How much disk space does MOGGED Looksmaxx or Die need?",
     answer:
-      "The Steam store has not published a download size or storage requirement as of 2026-09-27. Plan free SSD space for an Early Access build, then recheck the Steam store page once Sigma Labs publishes an install size.",
+      "The Steam Minimum spec table lists 8 GB of available storage. Plan free SSD space for the Early Access build plus patches on top of that floor.",
     pageIds: ["system-requirements"],
     category: "platform",
     schemaEligible: true,
@@ -285,7 +285,17 @@ export const faqItems: FAQItem[] = [
     id: "mlw-spec-windows10",
     question: "Will MOGGED Looksmaxx or Die run on Windows 10?",
     answer:
-      "The Steam store lists Windows 11 64-bit as the supported operating system on 2026-09-27. Windows 10 is not listed. Official Windows 10 support has not been announced.",
+      "No. The Steam Minimum spec table lists Windows 11 64-bit as the supported operating system. Windows 10 is not listed and official Windows 10 support has not been announced by Sigma Labs.",
+    pageIds: ["system-requirements"],
+    category: "platform",
+    schemaEligible: true,
+    sourceStatus: "official",
+  },
+  {
+    id: "mlw-spec-mic",
+    question: "Do I need a microphone for MOGGED Looksmaxx or Die?",
+    answer:
+      "Yes. The Steam store spec page lists a microphone as required for in-game voice chat. Proximity voice chat is built into the 1–8 player co-op session, so a working mic is part of the Minimum spec rather than an optional add-on.",
     pageIds: ["system-requirements"],
     category: "platform",
     schemaEligible: true,

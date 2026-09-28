@@ -94,7 +94,7 @@ export const homePage: PageContent = {
         { title: "Steam AppID", summary: "Canonical Steam listing on AppID 4917440.", href: "/steam" },
         { title: "Platforms", summary: "Windows PC scope; Mac/Linux/consoles unannounced.", href: "/platforms" },
         { title: "Early Access", summary: "3–6 month EA window and planned additions.", href: "/early-access" },
-        { title: "System requirements", summary: "Windows 11 64-bit only; hardware not yet announced.", href: "/system-requirements" },
+        { title: "System requirements", summary: "Steam Minimum: i5-12400F / RTX 3060 Ti 8GB / 16 GB RAM; mic required.", href: "/system-requirements" },
         { title: "Gameplay loop", summary: "Softmaxx by day, extract at night, 5am curfew.", href: "/gameplay" },
         { title: "Peptides", summary: "19 side effects and the True Adam endpoint.", href: "/peptides" },
         { title: "Items", summary: "126 items and 7 deployable upgrades.", href: "/items" },
