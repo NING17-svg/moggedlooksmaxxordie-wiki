@@ -6,6 +6,14 @@ Record every growth-relevant edit here. Keep entries short, factual, and useful 
 
 ## Change Log
 
+### 2026-09-28 - Adsterra six-unit code integration
+
+- Task: Replace the six placeholder Adsterra ad slots (Native Banner, Banner 728x90, Banner 468x60, Banner 320x50, Banner 160x600, Smartlink) with the real codes collected from the Adsterra publisher dashboard.
+- Files changed: `src/data/ads.ts` (six values populated); `GROWTH_LOG.md`.
+- URLs affected: none (ad slots live in shared page shell and footer; no public URL changes).
+- Ad baseline: All six fixed units now hold real, non-empty Adsterra code; `npm run verify` (typecheck, lint, template/content/indexnow validation, production build, rendered SEO) passes locally.
+- Verification: `npm run verify` exit 0.
+
 ### 2026-08-12 - Static discovery and review freshness baseline added
 
 - Task: Add locale-aware static search, automatic recent updates, visible review dates, and browser metadata/security defaults to the shared template.
