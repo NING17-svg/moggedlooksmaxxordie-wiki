@@ -11,16 +11,8 @@ import { normalizePath } from "@/lib/localization";
 const pages: PageContent[] = (() => {
   const seen = new Set<string>();
   const merged: PageContent[] = [];
-  // Iterate in reverse-priority order: later sources win on duplicate id.
-  for (const page of [
-    homePage,
-    ...fixedPagesList,
-    ...wikiPages,
-    ...trustPages,
-    ...sitePages,
-  ]) {
+  for (const page of [homePage, ...fixedPagesList, ...wikiPages, ...sitePages, ...trustPages]) {
     if (seen.has(page.id)) {
-      // Replace previous entry with the higher-priority version
       const index = merged.findIndex((p) => p.id === page.id);
       if (index >= 0) merged[index] = page;
       continue;
